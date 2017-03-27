@@ -1,19 +1,20 @@
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
 class Extention(object):
     enabled=False
 
-    ##ident="script_ident"
+    ##ident="plugin_ident"
 
-    ## Init plugin:
     @classmethod
-    def init(cls, engine):
+    def get_url_re(cls):
+        return re.compile('^https://some/url')
+
+
+    def __init__(self, url, *args, **kwargs):
+        self.url = url
+
+    def start(self, url):
         pass
-
-    ## Process incomming Message:
-    @classmethod
-    def process(cls, engine, message, **kwargs):
-        return message
-
