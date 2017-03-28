@@ -1,3 +1,11 @@
-MyVDl - program for download video from ext video sevices
+        MyVDl - program for download video from ext video sevices
 
-Have FUN!:))))
+        Avalible services:
+        * mail.ru (curl)
+        * tnt-online.ru (by plugin rutube.ru)
+        * rutube.ru (ffmpeg)
+        * usclab.ru (curl)
+        * youtube (just wrapper for youtube-dl)
+
+
+        Have FUN!:))))
