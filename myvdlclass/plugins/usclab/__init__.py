@@ -42,8 +42,9 @@ class USCLab(Extention):
         return re.compile('^https://www.usclub.ru/lecture/item')
 
 
-    def __init__(self, url, *args, **kwargs):
+    def __init__(self, url, engine, *args, **kwargs):
         self.url = url
+        self.engine = engine
         self.curl = ""
         self.setup()
 

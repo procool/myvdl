@@ -23,6 +23,16 @@ class myVDL(object):
                 continue
             
             self.urls.append((getattr(plug, 'get_url_re')(), plug,))
+
+    def find_plugin(self, url):
+        for url_ in self.urls:
+            f = url_[0].findall(url)
+            if isinstance(f, list) and len(f) > 0:
+                url_[1](url, self).start()
+                return None
+
+        print "URL is not supported!"
+
             
     def cli(self):
         try:
@@ -33,11 +43,6 @@ class myVDL(object):
             print "Usage: %s URL\n" % sys.argv[0]
             sys.exit(1)
 
-        for url_ in self.urls:
-            f = url_[0].findall(url)
-            if isinstance(f, list) and len(f) > 0:
-                url_[1](url).start()
-                break
-                
+        self.find_plugin(url)
 
 

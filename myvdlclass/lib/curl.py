@@ -3,8 +3,8 @@ import sys
 import logging
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
-#logger.setLevel(logging.INFO)
+#logger.setLevel(logging.ERROR)
+logger.setLevel(logging.INFO)
 
 
 class HTTPErrorEx(Exception):

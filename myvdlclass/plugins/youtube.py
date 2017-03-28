@@ -10,7 +10,7 @@ logger.setLevel(logging.DEBUG)
 
 
 
-class USCLab(Extention):
+class YouTube(Extention):
 
     enabled=True
     ident="youtube"
@@ -20,8 +20,9 @@ class USCLab(Extention):
         return re.compile('^http(s|):\/\/(www\.|)youtu(be\.com|\.be)')
 
 
-    def __init__(self, url, *args, **kwargs):
+    def __init__(self, url, engine, *args, **kwargs):
         self.url = url
+        self.engine = engine
 
     def start(self):
         print "It would be better to use youtube-dl software!"
