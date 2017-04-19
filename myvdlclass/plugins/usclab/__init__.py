@@ -84,6 +84,7 @@ class USCLab(Extention):
 	    'cookie': self.cookies_jar_file,
         }
 
+        counter = 0
         while True:
             answ = CUrl.download(self.url, 'compressed', **kwargs)
 
@@ -96,6 +97,12 @@ class USCLab(Extention):
             uname = self.re_login.findall(a_)
             if len(uname) > 0:
                 return uname[0], answ
+            counter += 1
+            if counter >= 5:
+                print "Error on downloading url!"
+                print answ
+                print "============================"
+                sys.exit(1)
 
 
     def start(self):
