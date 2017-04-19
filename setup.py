@@ -50,6 +50,7 @@ setup(
 	install_requires=[
 		'setuptools', 
 		'gevent', 
+                'lxml',
 	],
 
         include_package_data=True,

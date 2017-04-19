@@ -11,7 +11,7 @@ class HTTPErrorEx(Exception):
     pass
 
 class CUrl(object):
-    cmd = """/usr/bin/curl '%(url)s' %(args)s %(headers)s"""
+    cmd = """curl '%(url)s' %(args)s %(headers)s"""
 
     @classmethod
     def download(cls, url, *args, **kwargs):
@@ -56,6 +56,13 @@ class CUrl(object):
             cmd_ = "%s --output '%s'" % (cmd_, output)
         except:
             output = None
+
+
+        try:
+            location_ = kwargs.pop('L')
+            cmd_ = "%s --location'" % cmd_
+        except:
+            pass
 
 
 
