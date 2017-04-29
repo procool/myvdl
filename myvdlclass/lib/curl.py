@@ -60,7 +60,7 @@ class CUrl(object):
 
         try:
             location_ = kwargs.pop('L')
-            cmd_ = "%s --location'" % cmd_
+            cmd_ = "%s --location" % cmd_
         except:
             pass
 

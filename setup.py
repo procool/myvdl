@@ -51,6 +51,7 @@ setup(
 		'setuptools', 
 		'gevent', 
                 'lxml',
+                'cssselect',
 	],
 
         include_package_data=True,
